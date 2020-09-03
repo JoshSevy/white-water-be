@@ -110,3 +110,5 @@ export const whitewater = [
     take_out: "South Bank Launch or Almont Post Office"
   }
 ]
+
+module.exports = whitewater;

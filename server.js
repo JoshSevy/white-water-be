@@ -1,9 +1,7 @@
-import { whitewater } from './whitewater.js'
-import { response } from 'express';
-
 const express = require('express');
+const whitewater = require('./whitewater')
 const app = express();
-// const cors = require('cors')
+
 
 app.set('port', process.env.port || 8080);
 
@@ -11,7 +9,7 @@ app.use(express.json());
 
 app.locals.title = 'Crazy Whitewater';
 
-app.locals.whitewater = [...whitewater]
+app.locals.whitewater = whitewater;
 
 app.get('api/v1/whitewater', (request, response) => {
   response.status(200).json(app.locals.whitewater);
